@@ -1,0 +1,95 @@
+:root {
+  --navbar-color-accent: black;
+  --navbar-color-accent-hover: rgb(83, 74, 74);
+  --navbar-color-accent-active: rgb(70, 44, 44);
+  --navbar-first-level-bg-color: rgb(163, 154, 154);
+  --navbar-second-level-bg-color: rgb(163, 94, 94);
+  --navbar-second-level-border-color: rgb(102, 56, 56);
+  --navbar-link-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  border-bottom: 5px solid var(--navbar-color-accent);
+}
+
+.navbar li ul li {
+  background-color: var(--navbar-second-level-bg-color);
+  border: 1px solid var(--navbar-second-level-border-color);
+  min-width: 120px;
+  position: relative;
+}
+
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.navbar li ul {
+  min-height: 200px;
+  position: absolute;
+  display: none;
+  width: inherit;
+}
+
+.navbar__list-first-level {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  background-color: var(--navbar-first-level-bg-color);
+  z-index: 1;
+  text-transform: uppercase;
+
+}
+
+.navbar__list-second-level {
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.navbar__list-third-level {
+  z-index: 3;
+  top: calc(100% - 40px);
+  left: calc(100% - 5px);
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: flex-start;
+  padding: 0.2em 1em;
+  color: var(--navbar-link-color);
+  text-decoration: none;
+  min-height: 50px;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  background-color: var(--navbar-color-accent-hover);
+}
+
+
+.navbar .active {
+  background-color: var(--navbar-color-accent-active);
+}
+
+.navbar ul > li:hover > ul {
+  display: block;
+}
